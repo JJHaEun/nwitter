@@ -1,4 +1,5 @@
 import firebase from "firebase/compat/app";
+import "firebase/compat/auth";
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_API_KEY,
@@ -13,4 +14,8 @@ const firebaseConfig = {
 // Initialize Firebase
 // .gitignore에 .env파일을 포함시켜서 git에 올라가는것 방지(=> key노출 일부 막음)
 // 이부분은 키가 깃허브에 올라가는것만 방지한것이다.
-export default firebase.initializeApp(firebaseConfig);
+// 서비스를 빌드하면 상관없는 부분. 빌드하게되면 리엑트에서 원래값ㅅ을 넣어 해주기때문
+// REACT_APP_원하는 환경변수 이름
+firebase.initializeApp(firebaseConfig);
+export const authService = firebase.auth();
+// 이 중에 auth서비스만 뽑아서 사용
