@@ -17,5 +17,6 @@ const firebaseConfig = {
 // 서비스를 빌드하면 상관없는 부분. 빌드하게되면 리엑트에서 원래값ㅅ을 넣어 해주기때문
 // REACT_APP_원하는 환경변수 이름
 firebase.initializeApp(firebaseConfig);
+export const firebaseInstance = firebase;
 export const authService = firebase.auth();
 // 이 중에 auth서비스만 뽑아서 사용
